@@ -5,7 +5,7 @@ const size = 10;
 
 const themes = {
   rukun_islam: ["SYAHADAT", "SHALAT", "ZAKAT", "PUASA", "HAJI"],
-  rukun_iman: ["ALLAH", "MALAIKAT", "KITAB", "RASUL", "TAKDIR"],
+  rukun_iman: ["ALLAH", "MALAIKAT", "KITAB", "RASUL", "KIAMAT", "TAKDIR"],
   shalat_wajib: ["SHUBUH", "DHUHUR", "ASHAR", "MAGHRIB", "ISYA"],
   gerakan_shalat: ["BERDIRI", "TAKBIR", "RUKUK", "SUJUD", "DUDUK", "SALAM"],
   nama_rasul: ["NUH", "IBRAHIM", "MUSA", "ISA", "MUHAMMAD"],
@@ -337,3 +337,4 @@ function fillRandomLetters() {
     }
   }
 }
+
