@@ -1,10 +1,14 @@
 const words = {
-  hewan: ["KUCING", "SAPI", "GAJAH", "AYAM", "KUDA"],
-  buah: ["APEL", "MANGGA", "PISANG", "JERUK", "ANGGUR"],
-  warna: ["MERAH", "BIRU", "HIJAU", "KUNING", "PUTIH"],
-  kendaraan: ["MOBIL", "PESAWAT", "MOTOR", "SEPEDA", "KERETA"],
-  sayur: ["BAYAM", "TOGE", "LABU", "WORTEL", "TOMAT"]
-
+  rukun_islam: ["SYAHADAT", "SHALAT", "ZAKAT", "PUASA", "HAJI"],
+  rukun_iman: ["ALLAH", "MALAIKAT", "KITAB", "RASUL", "TAKDIR"],
+  shalat_wajib: ["SHUBUH", "DHUHUR", "ASHAR", "MAGHRIB", "ISYA"],
+  gerakan_shalat: ["BERDIRI", "TAKBIR", "RUKUK", "SUJUD", "DUDUK", "SALAM"],
+  nama_rasul: ["NUH", "IBRAHIM", "MUSA", "ISA", "MUHAMMAD"],
+  nama_malaikat: ["JIBRIL", "MIKAIL", "ISRAFIL", "IZRAIL", "RAKIB", "ATID", "MUNKAR", "NAKIR", "MALIK", "RIDWAN"],
+  nama_kitab: ["ZABUR", "TAURAT", "INJIL", "ALQURAN"],
+  rukun_haji: ["IHRAM", "WUQUF", "THAWAF", "SAI", "TAHALLUL", "TERTIB"],
+  hukum_islam: ["WAJIB", "SUNNAH", "HARAM", "MAKRUH", "MUBAH"],
+  istilah_puasa: ["SAHUR", "IMSAK", "TARAWIH", "QADHA", "FIDYAH", "TERTIB"]
 };
 
 const gridSize = 10;
@@ -26,9 +30,11 @@ function startGame() {
 }
 
 function generateGrid() {
-  grid = Array(gridSize).fill().map(() => Array(gridSize).fill(""));
+  grid = Array(gridSize)
+    .fill()
+    .map(() => Array(gridSize).fill(""));
 
-  currentWords.forEach(word => {
+  currentWords.forEach((word) => {
     placeWord(word);
   });
 
@@ -117,10 +123,10 @@ function selectLetter() {
   this.classList.toggle("selected");
 
   selectedCells = Array.from(document.querySelectorAll(".selected"));
-  let formedWord = selectedCells.map(cell => cell.innerText).join("");
+  let formedWord = selectedCells.map((cell) => cell.innerText).join("");
 
   if (currentWords.includes(formedWord)) {
-    selectedCells.forEach(cell => {
+    selectedCells.forEach((cell) => {
       cell.classList.remove("selected");
       cell.classList.add("found");
     });
@@ -148,6 +154,10 @@ function openFullscreen() {
 }
 
 // otomatis fullscreen saat halaman diklik pertama kali
-document.addEventListener("click", function () {
-  openFullscreen();
-}, { once: true });
+document.addEventListener(
+  "click",
+  function () {
+    openFullscreen();
+  },
+  { once: true },
+);
