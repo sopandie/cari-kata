@@ -2,41 +2,71 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Word Search Ceria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="container">
-      <h1>🔎 Word Search Ceria</h1>
+    <h1>🔎 Word Search Islami</h1>
 
-      <div class="level-box">
-        <label>Pilih Tema:</label>
-        <select id="category">
-          <option value="rukun_islam">Rukun Islam</option>
-          <option value="rukun_iman">Rukun Iman</option>
-          <option value="shalat_wajib">Shalat Wajib</option>
-          <option value="gerakan_shalat">Gerakan Shalat</option>
-          <option value="nama_rasul">Nama Rasul</option>
-          <option value="nama_malaikat">Nama Malaikat</option>
-          <option value="nama_kitab">Nama Rasul</option>
-          <option value="rukun_haji">Rukun Haji</option>
-          <option value="hukum_islam">Hukum Islam</option>
-          <option value="istilah_puasa">Istilah Puasa</option>
-        </select>
-        <button onclick="startGame()">Mulai</button>
-        <button onclick="openFullscreen()">🔳 Fullscreen</button>
-      </div>
+    <!-- PANEL KONTROL -->
+    <div class="controls">
+      Pilih Tema:
+      <select id="themeSelect">
+        <option value="rukun_islam">Rukun Islam</option>
+        <option value="rukun_iman">Rukun Iman</option>
+        <option value="shalat_wajib">Shalat Wajib</option>
+        <option value="gerakan_shalat">Gerakan Shalat</option>
+        <option value="nama_rasul">Nama Rasul</option>
+        <option value="nama_malaikat">Nama Malaikat</option>
+        <option value="nama_kitab">Nama Kitab</option>
+        <option value="rukun_haji">Rukun Haji</option>
+        <option value="hukum_islam">Hukum Islam</option>
+        <option value="istilah_puasa">Istilah Puasa</option>
+      </select>
 
-      <div id="wordList"></div>
-      <div id="grid"></div>
+      <button id="startBtn">Mulai</button>
 
-      <div class="bottom-bar">
-        <div class="score">Skor: <span id="score">0</span></div>
-
-        <button onclick="startGame()" class="restart">🔄 Restart</button>
-      </div>
+      <label style="margin-left: 10px">
+        <input type="checkbox" id="fullscreenToggle" />
+        Fullscreen
+      </label>
     </div>
 
+    <!-- TIMER -->
+    <div class="top-bar">
+      <div id="timer">Waktu: 0 detik</div>
+    </div>
+
+    <!-- DAFTAR KATA -->
+    <div id="wordList" class="word-list">Cari Kata:</div>
+
+    <!-- GAME CONTAINER -->
+    <div class="game-container">
+      <div id="grid" class="grid"></div>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div id="leaderboard" class="leaderboard"></div>
+
+    <!-- SCRIPT -->
     <script src="script.js"></script>
+
+    <!-- FULLSCREEN SCRIPT -->
+    <script>
+      const toggle = document.getElementById("fullscreenToggle");
+
+      toggle.addEventListener("change", () => {
+        if (toggle.checked) {
+          document.documentElement.requestFullscreen();
+        } else {
+          document.exitFullscreen();
+        }
+      });
+    </script>
   </body>
 </html>
