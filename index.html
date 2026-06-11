@@ -2,44 +2,76 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Word Search Ceria</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <meta
+      name="viewport"
+      content="
+      width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no
+    "
+    />
+
+    <title>Game Cari Kata Islami</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <h1>🔎 Word Search Islami</h1>
+    <!-- JUDUL -->
+    <h1>🕌 Game Cari Kata Islami</h1>
 
     <!-- PANEL KONTROL -->
     <div class="controls">
-      Pilih Tema:
+      <label for="themeSelect"> Pilih Tema: </label>
+
       <select id="themeSelect">
         <option value="rukun_islam">Rukun Islam</option>
+
         <option value="rukun_iman">Rukun Iman</option>
+
         <option value="shalat_wajib">Shalat Wajib</option>
+
         <option value="gerakan_shalat">Gerakan Shalat</option>
+
         <option value="nama_rasul">Nama Rasul</option>
+
         <option value="nama_malaikat">Nama Malaikat</option>
+
         <option value="nama_kitab">Nama Kitab</option>
+
         <option value="rukun_haji">Rukun Haji</option>
+
         <option value="hukum_islam">Hukum Islam</option>
+
         <option value="istilah_puasa">Istilah Puasa</option>
       </select>
 
-      <button id="startBtn">Mulai</button>
+      <button id="startBtn">▶ Mulai</button>
 
-      <label style="margin-left: 10px">
+      <!-- FULLSCREEN -->
+      <label class="fullscreen-label">
         <input type="checkbox" id="fullscreenToggle" />
+
         Fullscreen
       </label>
     </div>
 
     <!-- TIMER -->
     <div class="top-bar">
-      <div id="timer">Waktu: 0 detik</div>
+      <div id="timer">⏱ Waktu: 0 detik</div>
     </div>
 
     <!-- DAFTAR KATA -->
@@ -60,12 +92,27 @@
     <script>
       const toggle = document.getElementById("fullscreenToggle");
 
-      toggle.addEventListener("change", () => {
-        if (toggle.checked) {
-          document.documentElement.requestFullscreen();
-        } else {
-          document.exitFullscreen();
+      toggle.addEventListener("change", async () => {
+        try {
+          if (toggle.checked) {
+            if (!document.fullscreenElement) {
+              await document.documentElement.requestFullscreen();
+            }
+          } else {
+            if (document.fullscreenElement) {
+              await document.exitFullscreen();
+            }
+          }
+        } catch (err) {
+          alert("Fullscreen tidak didukung di perangkat ini.");
+
+          toggle.checked = false;
         }
+      });
+
+      // Sinkron otomatis
+      document.addEventListener("fullscreenchange", () => {
+        toggle.checked = !!document.fullscreenElement;
       });
     </script>
   </body>
