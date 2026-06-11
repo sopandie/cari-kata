@@ -11,17 +11,11 @@
 ================================ */
 body {
   margin: 0;
-
   font-family: Arial, sans-serif;
-
   background: #e9edf3;
-
   text-align: center;
-
   overflow: hidden;
-
   touch-action: none;
-
   -webkit-user-select: none;
   user-select: none;
 }
@@ -31,48 +25,33 @@ body {
 ================================ */
 h1 {
   margin: 10px 0 5px;
-
   font-size: 28px;
-
   color: blueviolet;
-
   text-shadow: 2px 2px 2px black;
 }
-
 /* ===============================
    CONTROL PANEL
 ================================ */
 .controls {
   margin-bottom: 5px;
-
   font-size: 14px;
 }
-
 .controls select,
 .controls button {
   padding: 4px 6px;
-
   font-size: 14px;
-
   cursor: pointer;
-
   border-radius: 5px;
-
   border: 1px solid #999;
 }
-
 /* ===============================
    DAFTAR KATA
 ================================ */
 .word-list {
   margin: 5px 0;
-
   font-size: 14px;
-
   font-style: italic;
-
   font-weight: 600;
-
   line-height: 1.6;
 }
 
@@ -81,9 +60,7 @@ h1 {
 ================================ */
 .game-container {
   width: 95vmin;
-
   max-width: 600px;
-
   margin: 0 auto;
 }
 
@@ -92,15 +69,10 @@ h1 {
 ================================ */
 .grid {
   display: grid;
-
   width: fit-content;
-
   margin: 0 auto;
-
   column-gap: 2px;
-
   row-gap: 2px;
-
   touch-action: none;
 }
 
@@ -109,37 +81,21 @@ h1 {
 ================================ */
 .cell {
   aspect-ratio: 1 / 1;
-
   width: 32px;
-
   background: #ffffff;
-
   border: 1px solid #bbb;
-
   box-shadow: 2px 2px 3px rgba(7, 241, 46, 0.6);
-
   border-radius: 5px;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   font-size: 14px;
-
   font-weight: bold;
-
   cursor: pointer;
-
   transition: 0.2s;
-
   user-select: none;
-
   -webkit-user-select: none;
-
   -webkit-touch-callout: none;
-
   touch-action: none;
 }
 
@@ -162,7 +118,6 @@ h1 {
 ================================ */
 .cell.found {
   background: #038b08;
-
   color: white;
 }
 
@@ -171,23 +126,16 @@ h1 {
 ================================ */
 .leaderboard {
   margin: 15px auto;
-
   padding: 5px;
-
   background: rgb(181, 247, 238);
-
   border: 1px solid #444;
-
   width: 340px;
-
   display: none;
-
   border-radius: 6px;
 }
 
 .leaderboard h3 {
   margin: 2px 0;
-
   padding: 0;
 }
 
@@ -196,26 +144,20 @@ h1 {
 ================================ */
 .leaderboard-table {
   width: 100%;
-
   border-collapse: collapse;
-
   border: 1px solid #000;
-
   font-size: 14px;
 }
 
 .leaderboard-table th,
 .leaderboard-table td {
   border: 1px solid #000;
-
   padding: 4px;
-
   text-align: center;
 }
 
 .leaderboard-table th {
   background-color: #f7c984;
-
   font-weight: bold;
 }
 
@@ -224,7 +166,6 @@ h1 {
 ================================ */
 .label-cari {
   color: #000;
-
   font-weight: 600;
 }
 
@@ -233,7 +174,6 @@ h1 {
 ================================ */
 .word-pending {
   color: red;
-
   font-weight: 600;
 }
 
@@ -242,9 +182,7 @@ h1 {
 ================================ */
 .word-found {
   color: green;
-
   text-decoration: line-through;
-
   font-weight: 600;
 }
 
@@ -253,52 +191,40 @@ h1 {
 ================================ */
 @media (max-width: 768px) {
   .cell {
-    width: 30px;
-
-    font-size: 13px;
+    width: 40px;
+    font-size: 18px;
   }
-
   h1 {
     font-size: 22px;
   }
 }
-
 /* ===============================
    RESPONSIVE HP
 ================================ */
 @media (max-width: 480px) {
   h1 {
-    font-size: 18px;
+    font-size: 24px;
   }
-
   .game-container {
     width: 100%;
   }
-
   .grid {
     width: fit-content;
   }
-
   .cell {
-    width: 28px;
-
-    font-size: 12px;
-
+    width: 32px;
+    font-size: 14px;
     border-radius: 4px;
   }
-
   .leaderboard {
     width: 95%;
   }
-
   .leaderboard-table {
-    font-size: 12px;
+    font-size: 14px;
   }
-
   .controls select,
   .controls button {
-    font-size: 12px;
-
+    font-size: 14px;
     padding: 4px;
   }
 }
